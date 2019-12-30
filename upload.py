@@ -14,7 +14,7 @@ for filename in sys.argv[1:]: # For every file specified.
         print(f'[ERROR] The file "{filename}" doesn\'t exist!')
         continue # Continues the loop for any valid files.
     except IsADirectoryError: # If the file is a directory and not a file.
-        print(f'[ERROR] You cannot upload a directory!')
+        print('[ERROR] You cannot upload a directory!')
         continue # Continues the loop for any valid files.
     r = requests.post('https://anonfile.com/api/upload', files=files) # HTTP Request to the API.
     print("[UPLOADING]", filename)
