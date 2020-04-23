@@ -20,14 +20,10 @@ for filename in sys.argv[1:]: # For every file specified.
     print("[UPLOADING]", filename)
     request_dict = json.loads(r.text)
     if request_dict['status']:
-        data = request_dict['data']
-        file = data['file']
-        urls = file['url']
-        urlshort = urls['short']
-        urllong = urls['full']
+        urlshort = request_dict['data']['file']['url']['short']
+        urllong = request_dict['data']['file']['url']['full']
         print(f'[SUCCESS] Your file has been succesfully uploaded:\nFull URL: {urllong}\nShort URL: {urlshort}')
     else: # If the GET request returns an error
-        error = request_dict['error']
-        message = error['message']
-        errtype = error['type']
+        message = request_dict['error']['message']
+        errtype = request_dict['error']['type']
         print(f'[ERROR] {message}\n{errtype}') # Prints the error
