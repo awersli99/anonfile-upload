@@ -4,7 +4,7 @@ An upload script for anonfile.com made in python.
 ## Installation
 
 ```bash
-pip3 install requests
+pip install -r requirements.txt
 ```
 
 ## Usage
