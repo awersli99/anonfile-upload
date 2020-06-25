@@ -4,6 +4,8 @@ import requests
 import sys
 import json
 
+url = 'https://anonfile.com/api/upload'
+
 if len(sys.argv) == 1: # If no files are specified print the error and exit.
     print("[ERROR] You need to specify one or more files!")
 
@@ -16,7 +18,7 @@ for filename in sys.argv[1:]: # For every file specified.
     except IsADirectoryError: # If the file is a directory and not a file.
         print('[ERROR] You cannot upload a directory!')
         continue # Continues the loop for any valid files.
-    r = requests.post('https://anonfile.com/api/upload', files=files) # HTTP Request to the API.
+    r = requests.post(url, files=files) # HTTP Request to the API.
     print("[UPLOADING]", filename)
     request_dict = json.loads(r.text)
     if request_dict['status']:
