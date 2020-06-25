@@ -1,5 +1,5 @@
 # anonfile-upload-script
-An upload script for anonfile.com made in python.
+An upload script for anonfile.com made in python. Supports multiple files.
 
 ## Installation
 
