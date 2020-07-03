@@ -25,8 +25,7 @@ for filename in sys.argv[1:]:  # For every file specified.
     if request_dict['status']:
         urlshort = request_dict['data']['file']['url']['short']
         urllong = request_dict['data']['file']['url']['full']
-        print(
-            f'[SUCCESS] Your file has been succesfully uploaded:\nFull URL: {urllong}\nShort URL: {urlshort}')
+        print(f'[SUCCESS] Your file has been succesfully uploaded:\nFull URL: {urllong}\nShort URL: {urlshort}')
     else:  # If the GET request returns an error
         message = request_dict['error']['message']
         errtype = request_dict['error']['type']
