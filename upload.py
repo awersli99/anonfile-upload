@@ -4,7 +4,7 @@ import requests
 import sys
 import json
 
-url = 'https://anonfile.com/api/upload'
+url = 'https://api.anonfiles.com/upload'
 
 if len(sys.argv) == 1:  # If no files are specified print the error and exit.
     print("[ERROR] You need to specify one or more files!")
