@@ -20,12 +20,12 @@ for filename in sys.argv[1:]:
         continue
     r = requests.post(url, files=files)
     print("[UPLOADING]", filename)
-    request_dict = json.loads(r.text)
-    if request_dict['status']:
-        urlshort = request_dict['data']['file']['url']['short']
-        urllong = request_dict['data']['file']['url']['full']
+    resp = json.loads(r.text)
+    if resp['status']:
+        urlshort = resp['data']['file']['url']['short']
+        urllong = resp['data']['file']['url']['full']
         print(f'[SUCCESS] Your file has been succesfully uploaded:\nFull URL: {urllong}\nShort URL: {urlshort}')
     else:
-        message = request_dict['error']['message']
-        errtype = request_dict['error']['type']
+        message = resp['error']['message']
+        errtype = resp['error']['type']
         print(f'[ERROR] {message}\n{errtype}')
