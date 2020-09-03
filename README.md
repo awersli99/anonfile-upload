@@ -11,5 +11,5 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-python3 upload.py {path-to-file}
+python3 upload.py {path-to-file 1} {path-to-file 2}...
 ```
